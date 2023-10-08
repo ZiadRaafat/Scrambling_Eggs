@@ -12,7 +12,11 @@ z_index = 1
 position = Vector2(558, 54)
 script = ExtResource("1_wwciq")
 
+<<<<<<< Updated upstream
 [node name="EggBody" type="RigidBody2D" parent="."]
+=======
+[node name="EggBody" type="RigidBody2D" parent="." groups=["normal_egg"]]
+>>>>>>> Stashed changes
 collision_layer = 2
 mass = 0.01
 max_contacts_reported = 2

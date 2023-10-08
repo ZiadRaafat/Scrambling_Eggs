@@ -17,5 +17,9 @@ func _on_egg_body_body_entered(body):
 	queue_free()
 	if Global.state==0:
 		print("Hi")
+<<<<<<< Updated upstream
 		Global.globalpoints=Global.globalpoints+1
+=======
+		Global.globalpoints=Global.globalpoints+100
+>>>>>>> Stashed changes
 

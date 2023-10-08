@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=3 uid="uid://bt6yppvru53d6"]
+=======
+[gd_scene load_steps=15 format=3 uid="uid://bt6yppvru53d6"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_78q2n"]
 [ext_resource type="Texture2D" uid="uid://cxqa3tsrqgdjt" path="res://assets/white.jpg" id="1_kre0b"]
@@ -8,6 +12,11 @@
 [ext_resource type="Script" path="res://scripts/Body.gd" id="4_njww8"]
 [ext_resource type="PackedScene" uid="uid://rrfit014ua6f" path="res://scenes/egg.tscn" id="7_w5kbb"]
 [ext_resource type="Script" path="res://scripts/Generator.gd" id="8_637ar"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" uid="uid://bxedla7vnm8n6" path="res://scenes/brokenegg.tscn" id="9_5phjq"]
+[ext_resource type="Script" path="res://scripts/Generator2New.gd" id="10_gcg5q"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oeqi7"]
 size = Vector2(20, 547)
@@ -53,6 +62,11 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Backdrop/floorcollision"]
+<<<<<<< Updated upstream
+=======
+light_mask = 3
+visibility_layer = 3
+>>>>>>> Stashed changes
 position = Vector2(576.5, 551)
 rotation = -3.14159
 scale = Vector2(11.1865, 0.65035)
@@ -80,6 +94,7 @@ shape = SubResource("RectangleShape2D_xtwhb")
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("3_0ounf")
 
+<<<<<<< Updated upstream
 [node name="Eggs" type="Node2D" parent="."]
 
 [node name="Egg" parent="Eggs" instance=ExtResource("7_w5kbb")]
@@ -92,6 +107,22 @@ script = ExtResource("8_637ar")
 autostart = true
 
 [node name="Control" type="Control" parent="Eggs"]
+=======
+[node name="AllEggs" type="Node2D" parent="."]
+
+[node name="Eggs" type="Node2D" parent="AllEggs"]
+
+[node name="Egg" parent="AllEggs/Eggs" instance=ExtResource("7_w5kbb")]
+position = Vector2(556, 54)
+
+[node name="Generator" type="Marker2D" parent="AllEggs/Eggs"]
+script = ExtResource("8_637ar")
+
+[node name="Timer" type="Timer" parent="AllEggs/Eggs/Generator"]
+autostart = true
+
+[node name="Control" type="Control" parent="AllEggs/Eggs"]
+>>>>>>> Stashed changes
 z_index = 2
 layout_mode = 3
 anchors_preset = 0
@@ -100,14 +131,22 @@ offset_top = 44.0
 offset_right = 1011.0
 offset_bottom = 84.0
 
+<<<<<<< Updated upstream
 [node name="Points" type="Label" parent="Eggs/Control"]
+=======
+[node name="Points" type="Label" parent="AllEggs/Eggs/Control"]
+>>>>>>> Stashed changes
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Points: 0"
 
+<<<<<<< Updated upstream
 [node name="Lives" type="Label" parent="Eggs/Control"]
+=======
+[node name="Lives" type="Label" parent="AllEggs/Eggs/Control"]
+>>>>>>> Stashed changes
 z_index = 1
 layout_mode = 0
 offset_top = 33.0
@@ -116,8 +155,27 @@ offset_bottom = 56.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Lives: 3"
 
+<<<<<<< Updated upstream
 [node name="Node" type="Node" parent="."]
 
 [connection signal="body_entered" from="Backdrop/floorcollision" to="." method="_on_floorcollision_body_entered"]
 [connection signal="body_entered" from="Backdrop/floorcollision" to="Eggs/Generator" method="_on_floorcollision_body_entered"]
 [connection signal="timeout" from="Eggs/Generator/Timer" to="Eggs/Generator" method="_on_timer_timeout"]
+=======
+[node name="BrokenEggs" type="Node2D" parent="AllEggs"]
+
+[node name="BrokenEgg" parent="AllEggs/BrokenEggs" instance=ExtResource("9_5phjq")]
+position = Vector2(441, 54)
+
+[node name="Generator2" type="Marker2D" parent="AllEggs/BrokenEggs"]
+script = ExtResource("10_gcg5q")
+
+[node name="Timer2" type="Timer" parent="AllEggs/BrokenEggs/Generator2"]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="Backdrop/floorcollision" to="." method="_on_floorcollision_body_entered"]
+[connection signal="body_entered" from="Backdrop/floorcollision" to="AllEggs/Eggs/Generator" method="_on_floorcollision_body_entered"]
+[connection signal="timeout" from="AllEggs/Eggs/Generator/Timer" to="AllEggs/Eggs/Generator" method="_on_timer_timeout"]
+[connection signal="timeout" from="AllEggs/BrokenEggs/Generator2/Timer2" to="AllEggs/BrokenEggs/Generator2" method="_on_timer_2_timeout"]
+>>>>>>> Stashed changes

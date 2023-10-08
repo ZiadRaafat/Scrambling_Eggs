@@ -8,6 +8,7 @@ func _ready():
 
 func _process(delta):
 	pass
+<<<<<<< Updated upstream
 
 
 func _on_rigid_body_2d_body_entered(body):
@@ -15,3 +16,5 @@ func _on_rigid_body_2d_body_entered(body):
 	if Global.state==0:
 		print("Life")
 		Global.lives=Global.lives-1.
+=======
+>>>>>>> Stashed changes

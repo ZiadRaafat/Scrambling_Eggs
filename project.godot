@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/global.gd"
 
+<<<<<<< Updated upstream
+=======
+[display]
+
+window/stretch/mode="viewport"
+
+>>>>>>> Stashed changes
 [input]
 
 right={
