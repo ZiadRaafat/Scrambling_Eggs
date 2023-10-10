@@ -15,6 +15,9 @@ func _on_timer_timeout():
 		newegg=egg.instantiate()
 		get_owner().add_child(newegg)
 		newegg.set_position(Vector2(randf_range(33,1124),-54))
+=======
+		newegg.set_position(Vector2(randf_range(33,1124),54))
+		
 
 
 

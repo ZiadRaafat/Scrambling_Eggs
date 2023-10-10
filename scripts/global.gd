@@ -9,6 +9,8 @@ var speedcheck=0
 
 
 	
+=======
+
 func _ready():
 	pass
 
@@ -19,3 +21,4 @@ func _process(delta):
 		state=1
 		lives=0
 	
+=======
