@@ -1,4 +1,7 @@
+[gd_scene load_steps=19 format=3 uid="uid://bt6yppvru53d6"]
+
 [gd_scene load_steps=15 format=3 uid="uid://bt6yppvru53d6"]
+
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_78q2n"]
 [ext_resource type="Texture2D" uid="uid://cxqa3tsrqgdjt" path="res://assets/white.jpg" id="1_kre0b"]
@@ -10,6 +13,12 @@
 [ext_resource type="Script" path="res://scripts/Generator.gd" id="8_637ar"]
 [ext_resource type="PackedScene" uid="uid://bxedla7vnm8n6" path="res://scenes/brokenegg.tscn" id="9_5phjq"]
 [ext_resource type="Script" path="res://scripts/Generator2New.gd" id="10_gcg5q"]
+
+[ext_resource type="PackedScene" uid="uid://exxs2p4m2sxe" path="res://scenes/goldenegg.tscn" id="11_bvq84"]
+[ext_resource type="Script" path="res://scripts/Generator3.gd" id="12_cvmck"]
+[ext_resource type="PackedScene" uid="uid://dbqdhgpxknyvr" path="res://scenes/speedegg.tscn" id="13_lccsy"]
+[ext_resource type="Script" path="res://scripts/Generator4.gd" id="14_ncnv8"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oeqi7"]
 size = Vector2(20, 547)
@@ -59,6 +68,8 @@ light_mask = 3
 visibility_layer = 3
 position = Vector2(576.5, 551)
 rotation = -3.14159
+
+scale = Vector2(13.984, 0.812988)
 scale = Vector2(11.1865, 0.65035)
 shape = SubResource("RectangleShape2D_b2fp6")
 
@@ -71,6 +82,8 @@ script = ExtResource("3_32o6w")
 [node name="Body" type="CharacterBody2D" parent="Player"]
 z_index = 1
 script = ExtResource("4_njww8")
+speed = 80.0
+
 speed = 70.0
 
 [node name="Collision" type="CollisionShape2D" parent="Player/Body"]
@@ -122,6 +135,19 @@ offset_bottom = 56.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Lives: 3"
 
+[node name="Status" type="Label" parent="AllEggs/Eggs/Control"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 116.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Status: Normal"
+
+[node name="BrokenEggs" type="Node2D" parent="AllEggs"]
+
+[node name="BrokenEgg" parent="AllEggs/BrokenEggs" instance=ExtResource("9_5phjq")]
+position = Vector2(-63, 54)
+=======
 [node name="BrokenEggs" type="Node2D" parent="AllEggs"]
 
 [node name="BrokenEgg" parent="AllEggs/BrokenEggs" instance=ExtResource("9_5phjq")]
@@ -134,7 +160,35 @@ script = ExtResource("10_gcg5q")
 wait_time = 3.0
 autostart = true
 
+[node name="GoldenEggs" type="Node2D" parent="AllEggs"]
+
+[node name="GoldenEgg" parent="AllEggs/GoldenEggs" instance=ExtResource("11_bvq84")]
+position = Vector2(-65, 119)
+
+[node name="Generator3" type="Marker2D" parent="AllEggs/GoldenEggs"]
+script = ExtResource("12_cvmck")
+
+[node name="Timer" type="Timer" parent="AllEggs/GoldenEggs/Generator3"]
+wait_time = 5.0
+autostart = true
+
+[node name="SpeedEggs" type="Node2D" parent="AllEggs"]
+
+[node name="SpeedEgg" parent="AllEggs/SpeedEggs" instance=ExtResource("13_lccsy")]
+position = Vector2(-64, 200)
+
+[node name="Generator4" type="Marker2D" parent="AllEggs/SpeedEggs"]
+script = ExtResource("14_ncnv8")
+
+[node name="Timer" type="Timer" parent="AllEggs/SpeedEggs/Generator4"]
+wait_time = 7.0
+autostart = true
+
+
 [connection signal="body_entered" from="Backdrop/floorcollision" to="." method="_on_floorcollision_body_entered"]
 [connection signal="body_entered" from="Backdrop/floorcollision" to="AllEggs/Eggs/Generator" method="_on_floorcollision_body_entered"]
 [connection signal="timeout" from="AllEggs/Eggs/Generator/Timer" to="AllEggs/Eggs/Generator" method="_on_timer_timeout"]
 [connection signal="timeout" from="AllEggs/BrokenEggs/Generator2/Timer2" to="AllEggs/BrokenEggs/Generator2" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="AllEggs/GoldenEggs/Generator3/Timer" to="AllEggs/GoldenEggs/Generator3" method="_on_timer_timeout"]
+[connection signal="timeout" from="AllEggs/SpeedEggs/Generator4/Timer" to="AllEggs/SpeedEggs/Generator4" method="_on_timer_timeout"]
+
