@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctxq1mqoncy7e"]
+
+[ext_resource type="Texture2D" uid="uid://devr23v02kede" path="res://particles/flameparticlecolor1.tres" id="1_1infx"]
+[ext_resource type="Texture2D" uid="uid://cug54sit1hxmn" path="res://assets/FlameParticle.png" id="1_tmi38"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l0hdd"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tpqpr"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 11.19
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = ExtResource("1_1infx")
+
+[node name="Fire" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_l0hdd")
+scale = Vector2(0.25, 0.25)
+process_material = SubResource("ParticleProcessMaterial_tpqpr")
+texture = ExtResource("1_tmi38")
+lifetime = 0.25
+local_coords = true

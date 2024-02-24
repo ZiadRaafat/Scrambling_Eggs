@@ -1,0 +1,594 @@
+[gd_scene load_steps=16 format=3 uid="uid://db2cco87ogn58"]
+
+[ext_resource type="Texture2D" uid="uid://fmpfnncfn5m3" path="res://assets/UI books & more.png" id="1_0836q"]
+[ext_resource type="Script" path="res://scenes/book.gd" id="1_xxx7v"]
+[ext_resource type="FontFile" uid="uid://dkccxtff3jxaq" path="res://fonts/PublicPixel-z84yD.ttf" id="2_wce3a"]
+[ext_resource type="Texture2D" uid="uid://c5s3l2esoiext" path="res://assets/egg.png" id="3_65anp"]
+[ext_resource type="Texture2D" uid="uid://78fam6u772if" path="res://assets/crackedegg.png" id="4_ijelc"]
+[ext_resource type="Texture2D" uid="uid://bmqs8ooi4u61f" path="res://assets/goldenegg.png" id="5_1lroo"]
+[ext_resource type="Texture2D" uid="uid://cxipk8xwcinxc" path="res://assets/pinkegg.png" id="6_bou6v"]
+[ext_resource type="Texture2D" uid="uid://bd78b7ej07fg2" path="res://assets/speedegg.png" id="7_lax2v"]
+[ext_resource type="Texture2D" uid="uid://b3ms1wtts5fwx" path="res://assets/slowegg.png" id="8_iety2"]
+[ext_resource type="Texture2D" uid="uid://c84fnwe3ixpag" path="res://assets/giantegg.png" id="9_kwg05"]
+[ext_resource type="Texture2D" uid="uid://67b8ys2qw7jb" path="res://assets/inverteregg.png" id="10_3xdke"]
+[ext_resource type="Texture2D" uid="uid://bv7xbse7ahjhp" path="res://assets/rainbowegg.png" id="11_sjy0x"]
+[ext_resource type="AudioStream" uid="uid://tsl5wshyq18h" path="res://sounds/turnpage.ogg" id="13_y2yv1"]
+[ext_resource type="Theme" uid="uid://6522bvun1ic1" path="res://themes/buttontheme2.tres" id="14_dpewo"]
+[ext_resource type="AudioStream" uid="uid://befa8xvusn0c3" path="res://sounds/Click.ogg" id="15_mgkk3"]
+
+[node name="Eggcyclopedia" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 8.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xxx7v")
+
+[node name="Page1" type="Sprite2D" parent="."]
+position = Vector2(571, 320)
+scale = Vector2(10, 10)
+texture = ExtResource("1_0836q")
+region_enabled = true
+region_rect = Rect2(16, 32, 96, 48)
+
+[node name="ClassicEgg" type="Control" parent="Page1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.3
+offset_top = -23.2
+offset_right = -1.3
+offset_bottom = 16.8
+scale = Vector2(0.94, 0.94)
+
+[node name="Label1" type="Label" parent="Page1/ClassicEgg"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 24.0
+offset_right = 289.0
+offset_bottom = 201.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Must be collected at all times or else a life will be lost"
+autowrap_mode = 3
+
+[node name="ReferenceRect1" type="ReferenceRect" parent="Page1/ClassicEgg"]
+layout_mode = 2
+offset_left = 13.1915
+offset_top = 9.57447
+offset_right = 53.1915
+offset_bottom = 49.5745
+scale = Vector2(0.3, 0.3)
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="Egg" type="Sprite2D" parent="Page1/ClassicEgg/ReferenceRect1"]
+position = Vector2(20.6667, 21)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("3_65anp")
+
+[node name="Label" type="Label" parent="Page1/ClassicEgg"]
+layout_mode = 2
+offset_left = 6.48936
+offset_top = 4.68085
+offset_right = 182.489
+offset_bottom = 30.6809
+scale = Vector2(0.14, 0.14)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Classic Egg"
+
+[node name="CrackedEgg" type="Control" parent="Page1"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 6.0
+offset_top = -23.2
+offset_right = 46.0
+offset_bottom = 16.8
+scale = Vector2(0.94, 0.94)
+
+[node name="Label1" type="Label" parent="Page1/CrackedEgg"]
+layout_mode = 2
+offset_left = 5.10638
+offset_top = 25.0
+offset_right = 306.106
+offset_bottom = 190.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "One life is lost if collected"
+autowrap_mode = 3
+
+[node name="ReferenceRect1" type="ReferenceRect" parent="Page1/CrackedEgg"]
+layout_mode = 2
+offset_left = 13.1915
+offset_top = 9.57447
+offset_right = 53.1915
+offset_bottom = 49.5745
+scale = Vector2(0.3, 0.3)
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="Egg" type="Sprite2D" parent="Page1/CrackedEgg/ReferenceRect1"]
+position = Vector2(20.6667, 21)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("4_ijelc")
+
+[node name="Label" type="Label" parent="Page1/CrackedEgg"]
+layout_mode = 2
+offset_left = 6.48936
+offset_top = 4.68085
+offset_right = 182.489
+offset_bottom = 30.6809
+scale = Vector2(0.14, 0.14)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Cracked Egg"
+
+[node name="Page2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(571, 320)
+scale = Vector2(10, 10)
+texture = ExtResource("1_0836q")
+region_enabled = true
+region_rect = Rect2(16, 32, 96, 48)
+
+[node name="GoldenEgg" type="Control" parent="Page2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.3
+offset_top = -23.2
+offset_right = -1.3
+offset_bottom = 16.8
+scale = Vector2(0.94, 0.94)
+
+[node name="Label1" type="Label" parent="Page2/GoldenEgg"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 25.0
+offset_right = 301.0
+offset_bottom = 190.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Gain a life when collected"
+autowrap_mode = 3
+
+[node name="ReferenceRect1" type="ReferenceRect" parent="Page2/GoldenEgg"]
+layout_mode = 2
+offset_left = 13.1915
+offset_top = 9.57447
+offset_right = 53.1915
+offset_bottom = 49.5745
+scale = Vector2(0.3, 0.3)
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="Egg" type="Sprite2D" parent="Page2/GoldenEgg/ReferenceRect1"]
+position = Vector2(20.6667, 21)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("5_1lroo")
+
+[node name="Label" type="Label" parent="Page2/GoldenEgg"]
+layout_mode = 2
+offset_left = 7.34044
+offset_top = 4.68085
+offset_right = 183.34
+offset_bottom = 30.6809
+scale = Vector2(0.14, 0.14)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Golden Egg"
+
+[node name="BlindEgg" type="Control" parent="Page2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 6.0
+offset_top = -23.2
+offset_right = 46.0
+offset_bottom = 16.8
+scale = Vector2(0.94, 0.94)
+
+[node name="Label1" type="Label" parent="Page2/BlindEgg"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 25.0
+offset_right = 299.0
+offset_bottom = 190.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Temporarily makes the screen blurry"
+autowrap_mode = 3
+
+[node name="ReferenceRect1" type="ReferenceRect" parent="Page2/BlindEgg"]
+layout_mode = 2
+offset_left = 13.1915
+offset_top = 9.57447
+offset_right = 53.1915
+offset_bottom = 49.5745
+scale = Vector2(0.3, 0.3)
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="Egg" type="Sprite2D" parent="Page2/BlindEgg/ReferenceRect1"]
+position = Vector2(20.6667, 21)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("6_bou6v")
+
+[node name="Label" type="Label" parent="Page2/BlindEgg"]
+layout_mode = 2
+offset_left = 8.93622
+offset_top = 4.68085
+offset_right = 184.936
+offset_bottom = 30.6809
+scale = Vector2(0.14, 0.14)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Blind Egg"
+
+[node name="Page3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(571, 320)
+scale = Vector2(10, 10)
+texture = ExtResource("1_0836q")
+region_enabled = true
+region_rect = Rect2(16, 32, 96, 48)
+
+[node name="SpeedEgg" type="Control" parent="Page3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.3
+offset_top = -23.2
+offset_right = -1.3
+offset_bottom = 16.8
+scale = Vector2(0.94, 0.94)
+
+[node name="Label1" type="Label" parent="Page3/SpeedEgg"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 25.0
+offset_right = 316.0
+offset_bottom = 190.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Temporarily increases movement speed"
+autowrap_mode = 3
+
+[node name="ReferenceRect1" type="ReferenceRect" parent="Page3/SpeedEgg"]
+layout_mode = 2
+offset_left = 13.1915
+offset_top = 9.57447
+offset_right = 53.1915
+offset_bottom = 49.5745
+scale = Vector2(0.3, 0.3)
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="Egg" type="Sprite2D" parent="Page3/SpeedEgg/ReferenceRect1"]
+position = Vector2(20.6667, 21)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("7_lax2v")
+
+[node name="Label" type="Label" parent="Page3/SpeedEgg"]
+layout_mode = 2
+offset_left = 8.72342
+offset_top = 4.68085
+offset_right = 184.723
+offset_bottom = 30.6809
+scale = Vector2(0.14, 0.14)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Speed Egg"
+
+[node name="SlowEgg" type="Control" parent="Page3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 6.0
+offset_top = -23.2
+offset_right = 46.0
+offset_bottom = 16.8
+scale = Vector2(0.94, 0.94)
+
+[node name="Label1" type="Label" parent="Page3/SlowEgg"]
+layout_mode = 2
+offset_left = 4.14899
+offset_top = 24.8936
+offset_right = 311.149
+offset_bottom = 189.894
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Temporarily decreases movement speed"
+autowrap_mode = 3
+
+[node name="ReferenceRect1" type="ReferenceRect" parent="Page3/SlowEgg"]
+layout_mode = 2
+offset_left = 13.1915
+offset_top = 9.57447
+offset_right = 53.1915
+offset_bottom = 49.5745
+scale = Vector2(0.3, 0.3)
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="Egg" type="Sprite2D" parent="Page3/SlowEgg/ReferenceRect1"]
+position = Vector2(20.6667, 21)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("8_iety2")
+
+[node name="Label" type="Label" parent="Page3/SlowEgg"]
+layout_mode = 2
+offset_left = 10.5319
+offset_top = 4.68085
+offset_right = 186.532
+offset_bottom = 30.6809
+scale = Vector2(0.14, 0.14)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Slow Egg"
+
+[node name="Page4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(571, 320)
+scale = Vector2(10, 10)
+texture = ExtResource("1_0836q")
+region_enabled = true
+region_rect = Rect2(16, 32, 96, 48)
+
+[node name="ElasticEgg" type="Control" parent="Page4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.3
+offset_top = -23.2
+offset_right = -1.3
+offset_bottom = 16.8
+scale = Vector2(0.94, 0.94)
+
+[node name="Label1" type="Label" parent="Page4/ElasticEgg"]
+layout_mode = 2
+offset_left = 4.78723
+offset_top = 24.8936
+offset_right = 301.787
+offset_bottom = 189.894
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Temporarily stretches basket, increasing collecting range"
+autowrap_mode = 3
+
+[node name="ReferenceRect1" type="ReferenceRect" parent="Page4/ElasticEgg"]
+layout_mode = 2
+offset_left = 13.1915
+offset_top = 9.57447
+offset_right = 53.1915
+offset_bottom = 49.5745
+scale = Vector2(0.3, 0.3)
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="Egg" type="Sprite2D" parent="Page4/ElasticEgg/ReferenceRect1"]
+position = Vector2(20.6667, 21)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("9_kwg05")
+
+[node name="Label" type="Label" parent="Page4/ElasticEgg"]
+layout_mode = 2
+offset_left = 6.9149
+offset_top = 4.68085
+offset_right = 182.915
+offset_bottom = 30.6809
+scale = Vector2(0.14, 0.14)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Elastic Egg"
+
+[node name="InverterEgg" type="Control" parent="Page4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 6.0
+offset_top = -23.2
+offset_right = 46.0
+offset_bottom = 16.8
+scale = Vector2(0.94, 0.94)
+
+[node name="Label1" type="Label" parent="Page4/InverterEgg"]
+layout_mode = 2
+offset_left = 4.78723
+offset_top = 25.0
+offset_right = 286.787
+offset_bottom = 190.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Temporarily reverses controls"
+autowrap_mode = 3
+
+[node name="ReferenceRect1" type="ReferenceRect" parent="Page4/InverterEgg"]
+layout_mode = 2
+offset_left = 13.1915
+offset_top = 9.57447
+offset_right = 53.1915
+offset_bottom = 49.5745
+scale = Vector2(0.3, 0.3)
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="Egg" type="Sprite2D" parent="Page4/InverterEgg/ReferenceRect1"]
+position = Vector2(20.6667, 21)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("10_3xdke")
+
+[node name="Label" type="Label" parent="Page4/InverterEgg"]
+layout_mode = 2
+offset_left = 4.89362
+offset_top = 4.68085
+offset_right = 196.894
+offset_bottom = 30.6809
+scale = Vector2(0.14, 0.14)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Inverter Egg"
+
+[node name="Page5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(571, 320)
+scale = Vector2(10, 10)
+texture = ExtResource("1_0836q")
+region_enabled = true
+region_rect = Rect2(16, 32, 96, 48)
+
+[node name="SuperEgg" type="Control" parent="Page5"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.3
+offset_top = -23.2
+offset_right = -1.3
+offset_bottom = 16.8
+scale = Vector2(0.94, 0.94)
+
+[node name="Label1" type="Label" parent="Page5/SuperEgg"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 25.0
+offset_right = 295.0
+offset_bottom = 190.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Temporarily makes you unable to lose lives"
+autowrap_mode = 3
+
+[node name="ReferenceRect1" type="ReferenceRect" parent="Page5/SuperEgg"]
+layout_mode = 2
+offset_left = 13.1915
+offset_top = 9.57447
+offset_right = 53.1915
+offset_bottom = 49.5745
+scale = Vector2(0.3, 0.3)
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="Egg" type="Sprite2D" parent="Page5/SuperEgg/ReferenceRect1"]
+position = Vector2(20.6667, 21)
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("11_sjy0x")
+
+[node name="Label" type="Label" parent="Page5/SuperEgg"]
+layout_mode = 2
+offset_left = 8.93617
+offset_top = 4.68085
+offset_right = 184.936
+offset_bottom = 30.6809
+scale = Vector2(0.14, 0.14)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Super Egg"
+
+[node name="Label" type="Label" parent="Page5"]
+offset_left = 12.0
+offset_top = -6.79999
+offset_right = 172.0
+offset_bottom = 16.2
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Good Luck!"
+
+[node name="flip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_y2yv1")
+
+[node name="Right" type="Button" parent="."]
+modulate = Color(1.5, 1.5, 1.5, 1)
+layout_mode = 0
+offset_left = 918.0
+offset_top = 579.0
+offset_right = 940.0
+offset_bottom = 610.0
+scale = Vector2(4, 2)
+theme = ExtResource("14_dpewo")
+theme_override_fonts/font = ExtResource("2_wce3a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Right"]
+position = Vector2(12, 12)
+texture = ExtResource("1_0836q")
+region_enabled = true
+region_rect = Rect2(453, 354, 8, 13)
+
+[node name="Left" type="Button" parent="."]
+modulate = Color(1.5, 1.5, 1.5, 1)
+layout_mode = 0
+offset_left = 135.0
+offset_top = 579.0
+offset_right = 157.0
+offset_bottom = 610.0
+scale = Vector2(4, 2)
+theme = ExtResource("14_dpewo")
+theme_override_fonts/font = ExtResource("2_wce3a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Left"]
+position = Vector2(10.25, 12)
+texture = ExtResource("1_0836q")
+region_enabled = true
+region_rect = Rect2(515, 354, 8, 13)
+
+[node name="Return" type="Button" parent="."]
+modulate = Color(1.5, 1.5, 1.5, 1)
+layout_mode = 0
+offset_left = 475.0
+offset_top = 565.0
+offset_right = 571.0
+offset_bottom = 581.0
+scale = Vector2(2, 6)
+focus_mode = 0
+theme = ExtResource("14_dpewo")
+theme_override_fonts/font = ExtResource("2_wce3a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 594.0
+offset_right = 623.0
+offset_bottom = 617.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_wce3a")
+text = "Return"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_mgkk3")
+volume_db = 15.0
+
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

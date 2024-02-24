@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b746i2wkv7tq0"]
+
+[ext_resource type="Texture2D" uid="uid://mlku5n78qyt2" path="res://assets/star.png" id="1_t2otw"]
+[ext_resource type="Script" path="res://particles/lifeparticle.gd" id="2_25b51"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f5bx7"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k4ykf"]
+emission_shape = 3
+emission_box_extents = Vector3(70, 23, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, -98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.02
+scale_max = 0.2
+turbulence_enabled = true
+
+[node name="Life" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_f5bx7")
+process_material = SubResource("ParticleProcessMaterial_k4ykf")
+texture = ExtResource("1_t2otw")
+speed_scale = 5.27
+script = ExtResource("2_25b51")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

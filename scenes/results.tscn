@@ -1,0 +1,131 @@
+[gd_scene load_steps=6 format=3 uid="uid://0dcyvwhjhae8"]
+
+[ext_resource type="Texture2D" uid="uid://31uvbys6jljj" path="res://assets/woodenboard.png" id="1_itile"]
+[ext_resource type="Script" path="res://scenes/results.gd" id="1_kijs5"]
+[ext_resource type="FontFile" uid="uid://dkccxtff3jxaq" path="res://fonts/PublicPixel-z84yD.ttf" id="2_3rrvu"]
+[ext_resource type="Theme" uid="uid://6522bvun1ic1" path="res://themes/buttontheme2.tres" id="3_p76bh"]
+[ext_resource type="AudioStream" uid="uid://befa8xvusn0c3" path="res://sounds/Click.ogg" id="5_fto8o"]
+
+[node name="Results" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kijs5")
+
+[node name="board" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(578, 247)
+scale = Vector2(8, 8)
+texture = ExtResource("1_itile")
+
+[node name="Result" type="Label" parent="board"]
+offset_left = -12.5
+offset_top = -7.625
+offset_right = 115.5
+offset_bottom = 18.375
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_3rrvu")
+text = "Results:"
+
+[node name="Score" type="Label" parent="board"]
+offset_left = -35.0
+offset_top = 0.875
+offset_right = 439.0
+offset_bottom = 31.875
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_3rrvu")
+text = "Score:"
+
+[node name="Highscore" type="Label" parent="board"]
+offset_left = -34.875
+offset_top = 7.125
+offset_right = 441.125
+offset_bottom = 40.125
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_3rrvu")
+text = "Highscore: "
+
+[node name="New Highscore" type="RichTextLabel" parent="board"]
+visible = false
+clip_contents = false
+offset_left = -17.375
+offset_top = 13.25
+offset_right = 228.625
+offset_bottom = 65.25
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("2_3rrvu")
+bbcode_enabled = true
+text = "New Highscore!"
+
+[node name="Replay" type="Button" parent="board"]
+offset_left = -33.625
+offset_top = 19.0
+offset_right = 18.375
+offset_bottom = 42.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("3_p76bh")
+theme_override_fonts/font = ExtResource("2_3rrvu")
+
+[node name="Label" type="Label" parent="board/Replay"]
+z_index = 2
+layout_mode = 0
+offset_left = 11.75
+offset_top = 6.0
+offset_right = 107.75
+offset_bottom = 29.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_3rrvu")
+text = "Replay"
+
+[node name="Exit" type="Button" parent="board"]
+offset_left = 4.5
+offset_top = 19.0
+offset_right = 56.5
+offset_bottom = 42.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("3_p76bh")
+theme_override_fonts/font = ExtResource("2_3rrvu")
+
+[node name="Label2" type="Label" parent="board/Exit"]
+z_index = 2
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 149.0
+offset_bottom = 29.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_3rrvu")
+text = "Exit Game"
+
+[node name="Returning" type="Label" parent="board"]
+offset_left = -33.875
+offset_top = 33.875
+offset_right = 430.125
+offset_bottom = 56.875
+scale = Vector2(0.15, 0.15)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_3rrvu")
+text = "Returning to main menu in: "
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fto8o")
+volume_db = 15.0
+
+[connection signal="pressed" from="board/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="board/Exit" to="." method="_on_exit_pressed"]

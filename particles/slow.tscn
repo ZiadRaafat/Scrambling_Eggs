@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://do68sq7644ydl"]
+
+[ext_resource type="Texture2D" uid="uid://cwt7ntxx1y17q" path="res://assets/spiral.png" id="1_miebd"]
+[ext_resource type="Script" path="res://particles/slow.gd" id="2_lrsd7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ufdxe"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_irxw8"]
+emission_shape = 3
+emission_box_extents = Vector3(100, 10, 10)
+particle_flag_disable_z = true
+gravity = Vector3(0, -98, 0)
+angular_velocity_max = 257.69
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+hue_variation_min = -0.95
+hue_variation_max = 0.92
+turbulence_enabled = true
+
+[node name="Spiral" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_ufdxe")
+process_material = SubResource("ParticleProcessMaterial_irxw8")
+texture = ExtResource("1_miebd")
+explosiveness = 0.26
+randomness = 0.31
+script = ExtResource("2_lrsd7")

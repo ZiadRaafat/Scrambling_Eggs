@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://ic2sxyiuuudt"]
+
+[ext_resource type="Script" path="res://scenes/pausemenu.gd" id="1_3c5ah"]
+[ext_resource type="FontFile" uid="uid://dkccxtff3jxaq" path="res://fonts/PublicPixel-z84yD.ttf" id="1_aysnb"]
+[ext_resource type="Texture2D" uid="uid://554sfmkdrkde" path="res://assets/pureblack.jpg" id="3_fy4va"]
+[ext_resource type="Theme" uid="uid://6522bvun1ic1" path="res://themes/buttontheme2.tres" id="3_rg06l"]
+[ext_resource type="AudioStream" uid="uid://befa8xvusn0c3" path="res://sounds/Click.ogg" id="5_ol7cn"]
+[ext_resource type="AudioStream" uid="uid://ba172itjkj6st" path="res://sounds/countdown-a.ogg" id="6_xxgld"]
+[ext_resource type="AudioStream" uid="uid://4qw2vmvwq2eq" path="res://sounds/countdown-b.ogg" id="7_4h83n"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3c5ah")
+
+[node name="Paused" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 410.0
+offset_top = 121.0
+offset_right = 506.0
+offset_bottom = 147.0
+scale = Vector2(3.5, 3.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_aysnb")
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Countdown" type="Label" parent="."]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 480.0
+offset_top = 102.0
+offset_right = 520.0
+offset_bottom = 128.0
+scale = Vector2(5, 5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_aysnb")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 474.0
+offset_top = 279.0
+offset_right = 578.0
+offset_bottom = 409.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = 30
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_rg06l")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_aysnb")
+theme_override_font_sizes/font_size = 8
+
+[node name="Label" type="Label" parent="VBoxContainer/Resume"]
+z_index = 3
+layout_mode = 0
+offset_left = 29.5
+offset_top = 10.5
+offset_right = 189.5
+offset_bottom = 29.5
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_aysnb")
+theme_override_font_sizes/font_size = 0
+text = "Resume"
+
+[node name="Resume2" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_rg06l")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_aysnb")
+theme_override_font_sizes/font_size = 8
+
+[node name="Label" type="Label" parent="VBoxContainer/Resume2"]
+z_index = 3
+layout_mode = 0
+offset_left = 18.0
+offset_top = 10.5
+offset_right = 178.0
+offset_bottom = 29.5
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_aysnb")
+theme_override_font_sizes/font_size = 0
+text = "Exit Game"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.32549)
+position = Vector2(583, 296)
+texture = ExtResource("3_fy4va")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ol7cn")
+volume_db = 15.0
+
+[node name="ca" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_xxgld")
+
+[node name="cb" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_4h83n")
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resume2" to="." method="_on_resume_2_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

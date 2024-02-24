@@ -1,0 +1,915 @@
+[gd_scene load_steps=93 format=3 uid="uid://bt6yppvru53d6"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_78q2n"]
+[ext_resource type="Texture2D" uid="uid://run838dsuh0g" path="res://assets/finalbg.png" id="2_u38lo"]
+[ext_resource type="Texture2D" uid="uid://cmkpeyt8u6ssj" path="res://assets/Basket.png" id="3_0ounf"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_32o6w"]
+[ext_resource type="Texture2D" uid="uid://cnvoye32omkjl" path="res://assets/floor2.jpg" id="3_70662"]
+[ext_resource type="Script" path="res://scripts/Body.gd" id="4_njww8"]
+[ext_resource type="PackedScene" uid="uid://rrfit014ua6f" path="res://scenes/egg.tscn" id="7_w5kbb"]
+[ext_resource type="Script" path="res://scripts/Generator.gd" id="8_637ar"]
+[ext_resource type="Texture2D" uid="uid://b6go3n33stvsd" path="res://assets/heart.png" id="8_r8co6"]
+[ext_resource type="PackedScene" uid="uid://bxedla7vnm8n6" path="res://scenes/brokenegg.tscn" id="9_5phjq"]
+[ext_resource type="Texture2D" uid="uid://bg3u5f7o03tw8" path="res://assets/fire.png" id="9_i3kfa"]
+[ext_resource type="Script" path="res://scripts/Generator2New.gd" id="10_gcg5q"]
+[ext_resource type="PackedScene" uid="uid://t52euxe40wxq" path="res://particles/confused.tscn" id="10_nyngt"]
+[ext_resource type="PackedScene" uid="uid://exxs2p4m2sxe" path="res://scenes/goldenegg.tscn" id="11_bvq84"]
+[ext_resource type="PackedScene" uid="uid://bsyhgl3hbkwdy" path="res://particles/electricparticle.tscn" id="11_xf2s7"]
+[ext_resource type="PackedScene" uid="uid://do68sq7644ydl" path="res://particles/slow.tscn" id="12_0fb0r"]
+[ext_resource type="PackedScene" uid="uid://ctxq1mqoncy7e" path="res://particles/flameparticle.tscn" id="12_3wwew"]
+[ext_resource type="Script" path="res://scripts/Generator3.gd" id="12_cvmck"]
+[ext_resource type="PackedScene" uid="uid://b746i2wkv7tq0" path="res://particles/lifeparticle.tscn" id="13_idvj2"]
+[ext_resource type="PackedScene" uid="uid://dbqdhgpxknyvr" path="res://scenes/speedegg.tscn" id="13_lccsy"]
+[ext_resource type="Script" path="res://scripts/Generator4.gd" id="14_ncnv8"]
+[ext_resource type="PackedScene" uid="uid://imu3h8xa46y4" path="res://scenes/slowegg.tscn" id="15_u2llw"]
+[ext_resource type="Script" path="res://scripts/Generator5.gd" id="16_t8h42"]
+[ext_resource type="PackedScene" uid="uid://khpjibx5drra" path="res://scenes/inverteregg.tscn" id="17_o401j"]
+[ext_resource type="Script" path="res://scripts/Generator6.gd" id="18_kpjxu"]
+[ext_resource type="PackedScene" uid="uid://bha5v5caccu5n" path="res://scenes/giantegg.tscn" id="19_oksvy"]
+[ext_resource type="Script" path="res://scripts/Generator7.gd" id="20_admsw"]
+[ext_resource type="PackedScene" uid="uid://b2bpfoxricine" path="res://scenes/rainbowegg.tscn" id="21_01fft"]
+[ext_resource type="Script" path="res://scripts/Generator8.gd" id="22_p0qkd"]
+[ext_resource type="PackedScene" uid="uid://bl4rsck4k08fv" path="res://scenes/tinyegg.tscn" id="23_klaql"]
+[ext_resource type="Script" path="res://scripts/Generator9New.gd" id="24_qgewd"]
+[ext_resource type="FontFile" uid="uid://dkccxtff3jxaq" path="res://fonts/PublicPixel-z84yD.ttf" id="25_0bqus"]
+[ext_resource type="Script" path="res://scenes/Camera2D.gd" id="28_f0kih"]
+[ext_resource type="PackedScene" uid="uid://cawi0l6cj8smg" path="res://particles/dust.tscn" id="33_ld61c"]
+[ext_resource type="Texture2D" uid="uid://b635qq348hkhs" path="res://assets/emptybar2.png" id="35_lnliu"]
+[ext_resource type="Texture2D" uid="uid://cxrl85vcio37" path="res://assets/speedbar2(2).png" id="36_tjgyg"]
+[ext_resource type="Script" path="res://scenes/SpeedBar.gd" id="37_a2s38"]
+[ext_resource type="Texture2D" uid="uid://dipp746g44yp7" path="res://assets/giantbar.png" id="38_emchg"]
+[ext_resource type="Script" path="res://scenes/GiantBar.gd" id="38_s0du8"]
+[ext_resource type="Texture2D" uid="uid://blvv7rluc8hxo" path="res://assets/slowbar.png" id="40_a3i1t"]
+[ext_resource type="Script" path="res://scenes/SlowBar.gd" id="40_cn015"]
+[ext_resource type="Texture2D" uid="uid://bajgkm83pjlcx" path="res://assets/inverterbar.png" id="42_bx5vv"]
+[ext_resource type="Script" path="res://scenes/InverterBar.gd" id="42_uky2h"]
+[ext_resource type="Texture2D" uid="uid://c0cb40k4ajdgd" path="res://assets/rainbowbar.png" id="44_74w6k"]
+[ext_resource type="Script" path="res://scenes/RainbowBar.gd" id="45_lr8xf"]
+[ext_resource type="Texture2D" uid="uid://cats8eetsfijy" path="res://assets/pinkbar.png" id="46_8pboa"]
+[ext_resource type="Script" path="res://scenes/PinkBar.gd" id="47_fnvbk"]
+[ext_resource type="AudioStream" uid="uid://c5qeorfs0bkqh" path="res://sounds/collect.ogg" id="48_mqcbx"]
+[ext_resource type="AudioStream" uid="uid://d26cgck4jfke6" path="res://sounds/spark.mp3" id="49_gblml"]
+[ext_resource type="AudioStream" uid="uid://3ookj5w5l7uu" path="res://sounds/slowegg.wav" id="50_cbshr"]
+[ext_resource type="AudioStream" uid="uid://b7wbchhddvx" path="res://sounds/golden2.wav" id="51_h7f06"]
+[ext_resource type="AudioStream" uid="uid://508l6ov2pdw3" path="res://sounds/streak1.wav" id="52_xih04"]
+[ext_resource type="AudioStream" uid="uid://bfr0wwijblslj" path="res://sounds/streak2.mp3" id="53_a23va"]
+[ext_resource type="AudioStream" uid="uid://cm1f8pfyksfju" path="res://sounds/crackegg.wav" id="54_80fmg"]
+[ext_resource type="AudioStream" uid="uid://p3d6d32u6fus" path="res://sounds/inverteregg.wav" id="55_no5de"]
+[ext_resource type="AudioStream" uid="uid://7gnp8gccxosu" path="res://sounds/giantegg.wav" id="56_28svg"]
+[ext_resource type="AudioStream" uid="uid://dl6jy3ioumju6" path="res://sounds/pinkegg.wav" id="57_o2ba1"]
+[ext_resource type="AudioStream" uid="uid://ctrcvv63ltwhv" path="res://sounds/rainbowegg3.mp3" id="58_8a2m3"]
+[ext_resource type="AudioStream" uid="uid://25axke6getwu" path="res://sounds/streaksizzle.wav" id="59_r2yfy"]
+[ext_resource type="AudioStream" uid="uid://bvvmkdfmo2r5n" path="res://sounds/streak25.mp3" id="60_rb45o"]
+[ext_resource type="AudioStream" uid="uid://dc7ulk3fr7jgb" path="res://sounds/streak3.mp3" id="61_4dyvn"]
+[ext_resource type="AudioStream" uid="uid://dhukm12p3kx0a" path="res://sounds/streak35.wav" id="62_2iwsw"]
+[ext_resource type="AudioStream" uid="uid://bcyrdm835cvp5" path="res://sounds/streak4.wav" id="63_p6pwd"]
+[ext_resource type="AudioStream" uid="uid://bv3vhb61j7mag" path="res://sounds/BGM1.wav" id="64_clj47"]
+[ext_resource type="AudioStream" uid="uid://dpjalq4lje4dt" path="res://sounds/gameover1.mp3" id="64_eqcax"]
+[ext_resource type="PackedScene" uid="uid://ic2sxyiuuudt" path="res://scenes/pausemenu.tscn" id="65_dix38"]
+[ext_resource type="PackedScene" uid="uid://0dcyvwhjhae8" path="res://scenes/results.tscn" id="69_1ipay"]
+[ext_resource type="Texture2D" uid="uid://c3jtk2yqomhkq" path="res://assets/arrow.png" id="69_rq6ry"]
+[ext_resource type="Texture2D" uid="uid://554sfmkdrkde" path="res://assets/pureblack.jpg" id="70_e41wv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oeqi7"]
+size = Vector2(20, 547)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytxvk"]
+size = Vector2(20, 548)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2fp6"]
+size = Vector2(102.713, 18.4516)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtwhb"]
+size = Vector2(26.6182, 225.524)
+
+[sub_resource type="Animation" id="Animation_vsdgd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5hq3i"]
+resource_name = "collect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -0.5, -0.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fe72i"]
+resource_name = "collect2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(2, 2, -2),
+"update": 0,
+"values": [Vector2(1.5, 1), Vector2(1.6, 1.1), Vector2(1.5, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_knkpf"]
+resource_name = "enlarge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -0.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jitp2"]
+resource_name = "reduce"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(1.5, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qb5h2"]
+_data = {
+"RESET": SubResource("Animation_vsdgd"),
+"collect": SubResource("Animation_5hq3i"),
+"collect2": SubResource("Animation_fe72i"),
+"enlarge": SubResource("Animation_knkpf"),
+"reduce": SubResource("Animation_jitp2")
+}
+
+[sub_resource type="Environment" id="Environment_k731h"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 4.6
+glow_strength = 2.0
+glow_bloom = 0.08
+glow_hdr_threshold = 1.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2atbf"]
+
+[sub_resource type="Animation" id="Animation_efeft"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [100.0]
+}
+
+[sub_resource type="Animation" id="Animation_ut86b"]
+resource_name = "countdown"
+length = 6.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [100.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jlgxt"]
+resource_name = "countdown2"
+length = 4.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [100.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_73gm6"]
+resource_name = "countdown3"
+length = 3.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [100.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_swuxq"]
+_data = {
+"RESET": SubResource("Animation_efeft"),
+"countdown": SubResource("Animation_ut86b"),
+"countdown2": SubResource("Animation_jlgxt"),
+"countdown3": SubResource("Animation_73gm6")
+}
+
+[sub_resource type="Animation" id="Animation_q2rdm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -585)]
+}
+
+[sub_resource type="Animation" id="Animation_y0udk"]
+resource_name = "dropdown"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-2, 2),
+"update": 0,
+"values": [Vector2(0, -585), Vector2(0, 33)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6spl"]
+_data = {
+"RESET": SubResource("Animation_q2rdm"),
+"dropdown": SubResource("Animation_y0udk")
+}
+
+[sub_resource type="Animation" id="Animation_ptpdq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.305882)]
+}
+
+[sub_resource type="Animation" id="Animation_ba5oi"]
+resource_name = "disappear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.305882), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hbtp0"]
+_data = {
+"RESET": SubResource("Animation_ptpdq"),
+"disappear": SubResource("Animation_ba5oi")
+}
+
+[node name="Main" type="Node"]
+script = ExtResource("1_78q2n")
+
+[node name="Backdrop" type="Sprite2D" parent="."]
+
+[node name="background" type="Sprite2D" parent="Backdrop"]
+modulate = Color(0.286275, 0.262745, 0.235294, 1)
+texture_repeat = 2
+position = Vector2(577, 323)
+scale = Vector2(0.664512, 0.561232)
+texture = ExtResource("2_u38lo")
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 1500)
+
+[node name="floor" type="Sprite2D" parent="Backdrop"]
+modulate = Color(1, 0.6, 0.0784314, 1)
+z_index = 2
+texture_repeat = 2
+position = Vector2(577, 670)
+scale = Vector2(0.1439, 0.244721)
+texture = ExtResource("3_70662")
+region_enabled = true
+region_rect = Rect2(-3736.65, -309.047, 10000, 1000)
+
+[node name="Border" type="StaticBody2D" parent="Backdrop"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backdrop/Border"]
+position = Vector2(1162, 274.5)
+shape = SubResource("RectangleShape2D_oeqi7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Backdrop/Border"]
+position = Vector2(-9, 274)
+shape = SubResource("RectangleShape2D_ytxvk")
+
+[node name="floorcollision" type="Area2D" parent="Backdrop"]
+z_index = 2
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backdrop/floorcollision"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(576.5, 551)
+rotation = -3.14159
+scale = Vector2(13.984, 0.812988)
+shape = SubResource("RectangleShape2D_b2fp6")
+
+[node name="Player" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(562, 510)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("3_32o6w")
+
+[node name="Body" type="CharacterBody2D" parent="Player"]
+z_index = 1
+script = ExtResource("4_njww8")
+speed = 80.0
+
+[node name="Collision" type="CollisionShape2D" parent="Player/Body"]
+z_index = 1
+position = Vector2(-0.0258179, 0.666626)
+rotation = -3.14159
+scale = Vector2(5.20754, -0.38429)
+shape = SubResource("RectangleShape2D_xtwhb")
+
+[node name="Sprite" type="Sprite2D" parent="Player/Body"]
+modulate = Color(1.5, 1.5, 1.5, 1)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("3_0ounf")
+
+[node name="Points" type="Label" parent="Player/Body"]
+offset_left = -61.3334
+offset_top = -5.33331
+offset_right = 61.6666
+offset_bottom = 17.6667
+theme_override_colors/font_color = Color(0.94902, 0.47451, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("25_0bqus")
+text = "0"
+horizontal_alignment = 1
+
+[node name="CollectAnim1" type="AnimationPlayer" parent="Player/Body"]
+speed_scale = 4.5
+libraries = {
+"": SubResource("AnimationLibrary_qb5h2")
+}
+
+[node name="Confuse" parent="Player/Body" instance=ExtResource("10_nyngt")]
+scale = Vector2(0.66491, 0.66491)
+
+[node name="Electric" parent="Player/Body" instance=ExtResource("11_xf2s7")]
+scale = Vector2(0.466667, 0.466667)
+
+[node name="Spiral" parent="Player/Body" instance=ExtResource("12_0fb0r")]
+scale = Vector2(0.70303, 0.70303)
+
+[node name="Life" parent="Player/Body" instance=ExtResource("13_idvj2")]
+
+[node name="Heart" type="Sprite2D" parent="Player/Body"]
+z_index = 2
+position = Vector2(-13.3334, 72)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("8_r8co6")
+
+[node name="Lives" type="Label" parent="Player/Body/Heart"]
+z_index = 1
+offset_left = 2.5
+offset_top = -3.0
+offset_right = 26.5
+offset_bottom = 8.0
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_color = Color(0.94902, 0.47451, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("25_0bqus")
+theme_override_font_sizes/font_size = 8
+text = ":5"
+
+[node name="Fire" type="Sprite2D" parent="Player/Body"]
+z_index = 2
+position = Vector2(-18.6666, 112)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_i3kfa")
+
+[node name="Streak" type="RichTextLabel" parent="Player/Body/Fire"]
+clip_contents = false
+offset_left = 8.88885
+offset_top = -8.88885
+offset_right = 102.889
+offset_bottom = 31.1111
+scale = Vector2(0.9, 0.9)
+theme_override_colors/default_color = Color(0.94902, 0.47451, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("25_0bqus")
+bbcode_enabled = true
+text = ":x1"
+
+[node name="Fire" parent="Player/Body/Fire/Streak" instance=ExtResource("12_3wwew")]
+z_index = -1
+position = Vector2(30.6063, 16.1619)
+scale = Vector2(0.2502, 0.2502)
+
+[node name="AllEggs" type="Node2D" parent="."]
+
+[node name="Eggs" type="Node2D" parent="AllEggs"]
+
+[node name="Egg" parent="AllEggs/Eggs" instance=ExtResource("7_w5kbb")]
+position = Vector2(556, 54)
+
+[node name="Generator" type="Marker2D" parent="AllEggs/Eggs"]
+script = ExtResource("8_637ar")
+
+[node name="Timer" type="Timer" parent="AllEggs/Eggs/Generator"]
+autostart = true
+
+[node name="BrokenEggs" type="Node2D" parent="AllEggs"]
+
+[node name="BrokenEgg" parent="AllEggs/BrokenEggs" instance=ExtResource("9_5phjq")]
+position = Vector2(-63, 54)
+
+[node name="Generator2" type="Marker2D" parent="AllEggs/BrokenEggs"]
+script = ExtResource("10_gcg5q")
+
+[node name="Timer2" type="Timer" parent="AllEggs/BrokenEggs/Generator2"]
+wait_time = 3.0
+autostart = true
+
+[node name="GoldenEggs" type="Node2D" parent="AllEggs"]
+
+[node name="GoldenEgg" parent="AllEggs/GoldenEggs" instance=ExtResource("11_bvq84")]
+position = Vector2(-65, 119)
+
+[node name="Generator3" type="Marker2D" parent="AllEggs/GoldenEggs"]
+script = ExtResource("12_cvmck")
+
+[node name="Timer" type="Timer" parent="AllEggs/GoldenEggs/Generator3"]
+wait_time = 10.0
+autostart = true
+
+[node name="SpeedEggs" type="Node2D" parent="AllEggs"]
+
+[node name="SpeedEgg" parent="AllEggs/SpeedEggs" instance=ExtResource("13_lccsy")]
+position = Vector2(-64, 179)
+
+[node name="Generator4" type="Marker2D" parent="AllEggs/SpeedEggs"]
+script = ExtResource("14_ncnv8")
+
+[node name="Timer" type="Timer" parent="AllEggs/SpeedEggs/Generator4"]
+wait_time = 11.0
+autostart = true
+
+[node name="SlowEggs" type="Node2D" parent="AllEggs"]
+
+[node name="SlowEgg" parent="AllEggs/SlowEggs" instance=ExtResource("15_u2llw")]
+position = Vector2(-65, 241)
+
+[node name="Generator5" type="Marker2D" parent="AllEggs/SlowEggs"]
+script = ExtResource("16_t8h42")
+
+[node name="Timer" type="Timer" parent="AllEggs/SlowEggs/Generator5"]
+wait_time = 13.0
+autostart = true
+
+[node name="InverterEggs" type="Node2D" parent="AllEggs"]
+
+[node name="InverterEgg" parent="AllEggs/InverterEggs" instance=ExtResource("17_o401j")]
+position = Vector2(-63, 305)
+
+[node name="Generator6" type="Marker2D" parent="AllEggs/InverterEggs"]
+script = ExtResource("18_kpjxu")
+
+[node name="Timer" type="Timer" parent="AllEggs/InverterEggs/Generator6"]
+wait_time = 8.0
+autostart = true
+
+[node name="GiantEggs" type="Node2D" parent="AllEggs"]
+
+[node name="GiantEgg" parent="AllEggs/GiantEggs" instance=ExtResource("19_oksvy")]
+position = Vector2(-62, 369)
+
+[node name="Generator7" type="Marker2D" parent="AllEggs/GiantEggs"]
+script = ExtResource("20_admsw")
+
+[node name="Timer" type="Timer" parent="AllEggs/GiantEggs/Generator7"]
+wait_time = 7.0
+autostart = true
+
+[node name="RainbowEggs" type="Node2D" parent="AllEggs"]
+
+[node name="RainbowEgg" parent="AllEggs/RainbowEggs" instance=ExtResource("21_01fft")]
+position = Vector2(-63, 438)
+
+[node name="Generator8" type="Marker2D" parent="AllEggs/RainbowEggs"]
+script = ExtResource("22_p0qkd")
+
+[node name="Timer" type="Timer" parent="AllEggs/RainbowEggs/Generator8"]
+wait_time = 25.0
+autostart = true
+
+[node name="TinyEggs" type="Node2D" parent="AllEggs"]
+
+[node name="TinyEgg" parent="AllEggs/TinyEggs" instance=ExtResource("23_klaql")]
+position = Vector2(-63, 509)
+
+[node name="Generator9New" type="Marker2D" parent="AllEggs/TinyEggs"]
+script = ExtResource("24_qgewd")
+
+[node name="Timer" type="Timer" parent="AllEggs/TinyEggs/Generator9New"]
+wait_time = 12.0
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 952.0
+offset_top = 44.0
+offset_right = 992.0
+offset_bottom = 84.0
+
+[node name="Highscore" type="Sprite2D" parent="Control"]
+position = Vector2(63, -29)
+scale = Vector2(0.75, 0.75)
+
+[node name="Highscore" type="Label" parent="Control/Highscore"]
+anchors_preset = -1
+anchor_left = 3.926
+anchor_top = -0.739
+anchor_right = 3.926
+anchor_bottom = -0.739
+offset_left = -89.2594
+offset_top = -8.59434
+offset_right = 102.741
+offset_bottom = 10.4057
+theme_override_colors/font_color = Color(0.94902, 0.47451, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("25_0bqus")
+theme_override_font_sizes/font_size = 16
+text = "Highscore: 0"
+
+[node name="FallspeedTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k731h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 2
+position = Vector2(576, 324)
+script = ExtResource("28_f0kih")
+
+[node name="Dust" parent="." instance=ExtResource("33_ld61c")]
+position = Vector2(556, 283)
+
+[node name="StatusBars" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 41.0
+offset_bottom = 41.0
+
+[node name="SpeedBar" type="TextureProgressBar" parent="StatusBars"]
+material = SubResource("CanvasItemMaterial_2atbf")
+layout_mode = 0
+offset_left = 15.0
+offset_top = 31.0
+offset_right = 47.0
+offset_bottom = 63.0
+scale = Vector2(7.5, 4.688)
+step = 0.001
+value = 100.0
+texture_under = ExtResource("35_lnliu")
+texture_progress = ExtResource("36_tjgyg")
+tint_under = Color(0.376471, 0.376471, 0.376471, 1)
+script = ExtResource("37_a2s38")
+
+[node name="SpeedAnim" type="AnimationPlayer" parent="StatusBars/SpeedBar"]
+libraries = {
+"": SubResource("AnimationLibrary_swuxq")
+}
+
+[node name="GiantBar" type="TextureProgressBar" parent="StatusBars"]
+material = SubResource("CanvasItemMaterial_2atbf")
+layout_mode = 0
+offset_left = 15.0
+offset_top = 129.0
+offset_right = 47.0
+offset_bottom = 161.0
+scale = Vector2(7.5, 4.688)
+step = 0.001
+value = 100.0
+texture_under = ExtResource("35_lnliu")
+texture_progress = ExtResource("38_emchg")
+tint_under = Color(0.376471, 0.376471, 0.376471, 1)
+tint_progress = Color(0.690196, 0.690196, 0.690196, 1)
+script = ExtResource("38_s0du8")
+
+[node name="GiantAnim" type="AnimationPlayer" parent="StatusBars/GiantBar"]
+libraries = {
+"": SubResource("AnimationLibrary_swuxq")
+}
+
+[node name="SlowBar" type="TextureProgressBar" parent="StatusBars"]
+material = SubResource("CanvasItemMaterial_2atbf")
+layout_mode = 0
+offset_left = 15.0
+offset_top = 80.0
+offset_right = 47.0
+offset_bottom = 112.0
+scale = Vector2(7.5, 4.688)
+step = 0.001
+value = 100.0
+texture_under = ExtResource("35_lnliu")
+texture_progress = ExtResource("40_a3i1t")
+tint_under = Color(0.376471, 0.376471, 0.376471, 1)
+tint_progress = Color(0.690196, 0.690196, 0.690196, 1)
+script = ExtResource("40_cn015")
+
+[node name="SlowAnim" type="AnimationPlayer" parent="StatusBars/SlowBar"]
+libraries = {
+"": SubResource("AnimationLibrary_swuxq")
+}
+
+[node name="InverterBar" type="TextureProgressBar" parent="StatusBars"]
+material = SubResource("CanvasItemMaterial_2atbf")
+layout_mode = 0
+offset_left = 15.0
+offset_top = 178.0
+offset_right = 47.0
+offset_bottom = 210.0
+scale = Vector2(7.5, 4.688)
+step = 0.001
+value = 100.0
+texture_under = ExtResource("35_lnliu")
+texture_progress = ExtResource("42_bx5vv")
+tint_under = Color(0.376471, 0.376471, 0.376471, 1)
+tint_progress = Color(0.690196, 0.690196, 0.690196, 1)
+script = ExtResource("42_uky2h")
+
+[node name="InverterAnim" type="AnimationPlayer" parent="StatusBars/InverterBar"]
+libraries = {
+"": SubResource("AnimationLibrary_swuxq")
+}
+
+[node name="RainbowBar" type="TextureProgressBar" parent="StatusBars"]
+material = SubResource("CanvasItemMaterial_2atbf")
+layout_mode = 0
+offset_left = 15.0
+offset_top = 227.0
+offset_right = 47.0
+offset_bottom = 259.0
+scale = Vector2(7.5, 4.688)
+step = 0.001
+value = 100.0
+texture_under = ExtResource("35_lnliu")
+texture_progress = ExtResource("44_74w6k")
+tint_under = Color(0.376471, 0.376471, 0.376471, 1)
+tint_progress = Color(0.690196, 0.690196, 0.690196, 1)
+script = ExtResource("45_lr8xf")
+
+[node name="RainbowAnim" type="AnimationPlayer" parent="StatusBars/RainbowBar"]
+libraries = {
+"": SubResource("AnimationLibrary_swuxq")
+}
+
+[node name="PinkBar" type="CanvasLayer" parent="StatusBars"]
+
+[node name="PinkBar" type="TextureProgressBar" parent="StatusBars/PinkBar"]
+material = SubResource("CanvasItemMaterial_2atbf")
+offset_left = 19.0
+offset_top = 277.0
+offset_right = 51.0
+offset_bottom = 309.0
+scale = Vector2(7.5, 4.688)
+step = 0.001
+value = 100.0
+texture_under = ExtResource("35_lnliu")
+texture_progress = ExtResource("46_8pboa")
+tint_under = Color(0.376471, 0.376471, 0.376471, 1)
+script = ExtResource("47_fnvbk")
+
+[node name="PinkAnim" type="AnimationPlayer" parent="StatusBars/PinkBar/PinkBar"]
+libraries = {
+"": SubResource("AnimationLibrary_swuxq")
+}
+
+[node name="SoundEffects" type="Node2D" parent="."]
+
+[node name="egg" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("48_mqcbx")
+volume_db = -13.198
+
+[node name="speedegg" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("49_gblml")
+
+[node name="slowegg" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("50_cbshr")
+
+[node name="goldenegg" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("51_h7f06")
+
+[node name="crackegg" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("54_80fmg")
+
+[node name="inverteregg" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("55_no5de")
+volume_db = 1.0
+
+[node name="giantegg" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("56_28svg")
+
+[node name="pinkegg" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("57_o2ba1")
+volume_db = 12.0
+
+[node name="rainbowegg" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("58_8a2m3")
+volume_db = 6.0
+
+[node name="streaksizzle" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("59_r2yfy")
+volume_db = 10.0
+
+[node name="streak15" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("52_xih04")
+
+[node name="streak2" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("53_a23va")
+
+[node name="streak25" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("60_rb45o")
+
+[node name="streak3" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("61_4dyvn")
+
+[node name="streak35" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("62_2iwsw")
+
+[node name="streak4" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("63_p6pwd")
+
+[node name="gameover" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("64_eqcax")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("64_clj47")
+volume_db = -10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("65_dix38")]
+visible = false
+z_index = 8
+
+[node name="CanvasLayerResults" type="CanvasLayer" parent="."]
+
+[node name="Results" parent="CanvasLayerResults" instance=ExtResource("69_1ipay")]
+z_index = 5
+offset_top = -585.0
+offset_right = 52992.0
+offset_bottom = 29223.0
+
+[node name="DropDown" type="AnimationPlayer" parent="CanvasLayerResults/Results"]
+speed_scale = 3.0
+libraries = {
+"": SubResource("AnimationLibrary_q6spl")
+}
+
+[node name="CanvasLayerDark" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="darkscreen" type="Sprite2D" parent="CanvasLayerDark"]
+visible = false
+modulate = Color(1, 1, 1, 0.32549)
+position = Vector2(583, 296)
+texture = ExtResource("70_e41wv")
+
+[node name="ReturnMMTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Container" type="Container" parent="."]
+modulate = Color(1, 1, 1, 0.305882)
+offset_left = 268.0
+offset_top = 88.0
+offset_right = 894.0
+offset_bottom = 314.0
+
+[node name="RightArrow" type="Sprite2D" parent="Container"]
+position = Vector2(475, 74)
+scale = Vector2(5, 5)
+texture = ExtResource("69_rq6ry")
+
+[node name="Label" type="Label" parent="Container/RightArrow"]
+offset_left = -13.4
+offset_top = 7.20001
+offset_right = 258.6
+offset_bottom = 64.2
+scale = Vector2(0.1, 0.1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("25_0bqus")
+text = "'Right Arrow Key'
+or
+'D'"
+horizontal_alignment = 1
+
+[node name="LeftArrow" type="Sprite2D" parent="Container"]
+position = Vector2(122, 54)
+rotation = 3.14159
+scale = Vector2(5, 5)
+texture = ExtResource("69_rq6ry")
+
+[node name="Label2" type="Label" parent="Container/LeftArrow"]
+offset_left = 13.8
+offset_top = -11.2
+offset_right = 285.8
+offset_bottom = 66.8
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("25_0bqus")
+text = "'Left Arrow Key'
+or
+'A'"
+horizontal_alignment = 1
+
+[node name="Hint" type="AnimationPlayer" parent="Container"]
+libraries = {
+"": SubResource("AnimationLibrary_hbtp0")
+}
+
+[connection signal="body_entered" from="Backdrop/floorcollision" to="." method="_on_floorcollision_body_entered"]
+[connection signal="body_entered" from="Backdrop/floorcollision" to="AllEggs/Eggs/Generator" method="_on_floorcollision_body_entered"]
+[connection signal="timeout" from="AllEggs/Eggs/Generator/Timer" to="AllEggs/Eggs/Generator" method="_on_timer_timeout"]
+[connection signal="timeout" from="AllEggs/BrokenEggs/Generator2/Timer2" to="AllEggs/BrokenEggs/Generator2" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="AllEggs/GoldenEggs/Generator3/Timer" to="AllEggs/GoldenEggs/Generator3" method="_on_timer_timeout"]
+[connection signal="timeout" from="AllEggs/SpeedEggs/Generator4/Timer" to="AllEggs/SpeedEggs/Generator4" method="_on_timer_timeout"]
+[connection signal="timeout" from="AllEggs/SlowEggs/Generator5/Timer" to="AllEggs/SlowEggs/Generator5" method="_on_timer_timeout"]
+[connection signal="timeout" from="AllEggs/InverterEggs/Generator6/Timer" to="AllEggs/InverterEggs/Generator6" method="_on_timer_timeout"]
+[connection signal="timeout" from="AllEggs/GiantEggs/Generator7/Timer" to="AllEggs/GiantEggs/Generator7" method="_on_timer_timeout"]
+[connection signal="timeout" from="AllEggs/RainbowEggs/Generator8/Timer" to="AllEggs/RainbowEggs/Generator8" method="_on_timer_timeout"]
+[connection signal="timeout" from="AllEggs/TinyEggs/Generator9New/Timer" to="AllEggs/TinyEggs/Generator9New" method="_on_timer_timeout"]
+[connection signal="timeout" from="FallspeedTimer" to="." method="_on_fallspeed_timer_timeout"]
+[connection signal="timeout" from="ReturnMMTimer" to="." method="_on_return_mm_timer_timeout"]

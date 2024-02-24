@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsyhgl3hbkwdy"]
+
+[ext_resource type="Texture2D" uid="uid://bvw6lxe6ulbi4" path="res://assets/spark_04.png" id="1_6ix7m"]
+[ext_resource type="Script" path="res://particles/electricparticle.gd" id="2_cn2m3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s06dx"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_uufyf"]
+_data = [Vector2(0.403614, 0.0105263), 0.0, 0.0, 0, 0, Vector2(0.945783, 0.884211), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ksms1"]
+texture_mode = 1
+curve = SubResource("Curve_uufyf")
+
+[sub_resource type="Curve" id="Curve_ng7kc"]
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cjucm"]
+curve = SubResource("Curve_ng7kc")
+
+[sub_resource type="Gradient" id="Gradient_p47h6"]
+colors = PackedColorArray(0.419608, 1, 1, 1, 1, 0.904615, 0.992088, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e8mqg"]
+gradient = SubResource("Gradient_p47h6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_olfom"]
+emission_shape = 3
+emission_box_extents = Vector3(10, 50, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -151.6
+angle_max = 227.4
+scale_min = 0.0
+scale_max = 0.5
+color = Color(0, 0.992157, 0.976471, 1)
+color_ramp = SubResource("GradientTexture1D_e8mqg")
+turbulence_enabled = true
+turbulence_noise_strength = 13.42
+turbulence_noise_scale = 10.0
+anim_speed_min = 5.0
+anim_speed_max = 5.0
+anim_speed_curve = SubResource("CurveTexture_cjucm")
+anim_offset_min = 0.1368
+anim_offset_max = 0.3894
+anim_offset_curve = SubResource("CurveTexture_ksms1")
+
+[node name="Electric" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_s06dx")
+rotation = 1.5676
+process_material = SubResource("ParticleProcessMaterial_olfom")
+texture = ExtResource("1_6ix7m")
+speed_scale = 13.29
+explosiveness = 0.4
+randomness = 0.4
+script = ExtResource("2_cn2m3")
