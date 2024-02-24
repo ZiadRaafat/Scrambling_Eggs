@@ -14,7 +14,11 @@ script = ExtResource("1_lxa0g")
 
 [node name="EggBody" type="RigidBody2D" parent="." groups=["speed_egg"]]
 collision_layer = 2
+<<<<<<< HEAD
 mass = 1.5
+=======
+mass = 0.01
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 max_contacts_reported = 2
 contact_monitor = true
 freeze_mode = 1

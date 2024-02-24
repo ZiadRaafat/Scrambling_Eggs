@@ -10,6 +10,7 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
 config/name="Scrambling Eggs"
 run/main_scene="res://scenes/mainmenu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
@@ -17,11 +18,20 @@ boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://assets/SESplasher.png"
 config/icon="res://assets/eggico4.ico"
 config/windows_native_icon="res://assets/eggico4.ico"
+=======
+config/name="Egg Catcher"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.1", "Mobile")
+config/icon="res://icon.svg"
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 
 [autoload]
 
 Global="*res://scripts/global.gd"
+<<<<<<< HEAD
 SceneTransition="*res://scenes/scene_transition.tscn"
+=======
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 
 [display]
 
@@ -41,6 +51,7 @@ left={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
 ]
 }
+<<<<<<< HEAD
 Pause={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
@@ -55,4 +66,13 @@ meow={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+=======
+
+[rendering]
+
+
+textures/canvas_textures/default_texture_filter=0
+=======
+
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 renderer/rendering_method="mobile"

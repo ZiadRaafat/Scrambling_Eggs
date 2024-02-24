@@ -16,5 +16,10 @@ func _on_timer_2_timeout():
 		neweggg=begg.instantiate()
 		get_owner().add_child(neweggg)
 		neweggg.set_position(Vector2(randf_range(33,1124),-54))
+<<<<<<< HEAD
+=======
+=======
+		neweggg.set_position(Vector2(randf_range(33,1124),54))
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 		
 

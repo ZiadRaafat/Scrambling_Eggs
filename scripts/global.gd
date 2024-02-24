@@ -5,6 +5,7 @@ var globalpoints=0
 var lives=5
 var state=0
 var speedflag=0
+<<<<<<< HEAD
 var inverterflag=0
 var giantflag=0
 var rainbowflag=0
@@ -50,6 +51,14 @@ func reset():
 	scalesize=Vector2(1,1)
 	goldenflag=0
 		
+=======
+var speedcheck=0
+
+
+	
+=======
+
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 func _ready():
 	pass
 
@@ -59,6 +68,11 @@ func _process(delta):
 	if lives<=0:
 		state=1
 		lives=0
+<<<<<<< HEAD
 	if globalpoints<=0:
 		globalpoints=0
 	
+=======
+	
+=======
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db

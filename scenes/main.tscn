@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=93 format=3 uid="uid://bt6yppvru53d6"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_78q2n"]
@@ -69,6 +70,29 @@
 [ext_resource type="PackedScene" uid="uid://0dcyvwhjhae8" path="res://scenes/results.tscn" id="69_1ipay"]
 [ext_resource type="Texture2D" uid="uid://c3jtk2yqomhkq" path="res://assets/arrow.png" id="69_rq6ry"]
 [ext_resource type="Texture2D" uid="uid://554sfmkdrkde" path="res://assets/pureblack.jpg" id="70_e41wv"]
+=======
+[gd_scene load_steps=19 format=3 uid="uid://bt6yppvru53d6"]
+
+[gd_scene load_steps=15 format=3 uid="uid://bt6yppvru53d6"]
+
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_78q2n"]
+[ext_resource type="Texture2D" uid="uid://cxqa3tsrqgdjt" path="res://assets/white.jpg" id="1_kre0b"]
+[ext_resource type="Texture2D" uid="uid://tx1hh1a3lti8" path="res://assets/gray.png" id="2_x4u64"]
+[ext_resource type="Texture2D" uid="uid://cmkpeyt8u6ssj" path="res://assets/Basket.png" id="3_0ounf"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_32o6w"]
+[ext_resource type="Script" path="res://scripts/Body.gd" id="4_njww8"]
+[ext_resource type="PackedScene" uid="uid://rrfit014ua6f" path="res://scenes/egg.tscn" id="7_w5kbb"]
+[ext_resource type="Script" path="res://scripts/Generator.gd" id="8_637ar"]
+[ext_resource type="PackedScene" uid="uid://bxedla7vnm8n6" path="res://scenes/brokenegg.tscn" id="9_5phjq"]
+[ext_resource type="Script" path="res://scripts/Generator2New.gd" id="10_gcg5q"]
+
+[ext_resource type="PackedScene" uid="uid://exxs2p4m2sxe" path="res://scenes/goldenegg.tscn" id="11_bvq84"]
+[ext_resource type="Script" path="res://scripts/Generator3.gd" id="12_cvmck"]
+[ext_resource type="PackedScene" uid="uid://dbqdhgpxknyvr" path="res://scenes/speedegg.tscn" id="13_lccsy"]
+[ext_resource type="Script" path="res://scripts/Generator4.gd" id="14_ncnv8"]
+
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oeqi7"]
 size = Vector2(20, 547)
@@ -80,6 +104,7 @@ size = Vector2(20, 548)
 size = Vector2(102.713, 18.4516)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtwhb"]
+<<<<<<< HEAD
 size = Vector2(26.6182, 225.524)
 
 [sub_resource type="Animation" id="Animation_vsdgd"]
@@ -320,6 +345,9 @@ _data = {
 "RESET": SubResource("Animation_ptpdq"),
 "disappear": SubResource("Animation_ba5oi")
 }
+=======
+size = Vector2(26.6182, 19.8286)
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 
 [node name="Main" type="Node"]
 script = ExtResource("1_78q2n")
@@ -327,6 +355,7 @@ script = ExtResource("1_78q2n")
 [node name="Backdrop" type="Sprite2D" parent="."]
 
 [node name="background" type="Sprite2D" parent="Backdrop"]
+<<<<<<< HEAD
 modulate = Color(0.286275, 0.262745, 0.235294, 1)
 texture_repeat = 2
 position = Vector2(577, 323)
@@ -344,6 +373,17 @@ scale = Vector2(0.1439, 0.244721)
 texture = ExtResource("3_70662")
 region_enabled = true
 region_rect = Rect2(-3736.65, -309.047, 10000, 1000)
+=======
+position = Vector2(618, 318)
+scale = Vector2(2.4912, 2.21875)
+texture = ExtResource("1_kre0b")
+
+[node name="floor" type="Sprite2D" parent="Backdrop"]
+z_index = 2
+position = Vector2(583, 642)
+scale = Vector2(4.72932, 1)
+texture = ExtResource("2_x4u64")
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 
 [node name="Border" type="StaticBody2D" parent="Backdrop"]
 
@@ -365,12 +405,22 @@ light_mask = 3
 visibility_layer = 3
 position = Vector2(576.5, 551)
 rotation = -3.14159
+<<<<<<< HEAD
 scale = Vector2(13.984, 0.812988)
+=======
+
+scale = Vector2(13.984, 0.812988)
+scale = Vector2(11.1865, 0.65035)
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 shape = SubResource("RectangleShape2D_b2fp6")
 
 [node name="Player" type="Node2D" parent="."]
 z_index = 2
+<<<<<<< HEAD
 position = Vector2(562, 510)
+=======
+position = Vector2(562, 514)
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 scale = Vector2(0.75, 0.75)
 script = ExtResource("3_32o6w")
 
@@ -379,14 +429,23 @@ z_index = 1
 script = ExtResource("4_njww8")
 speed = 80.0
 
+<<<<<<< HEAD
 [node name="Collision" type="CollisionShape2D" parent="Player/Body"]
 z_index = 1
 position = Vector2(-0.0258179, 0.666626)
+=======
+speed = 70.0
+
+[node name="Collision" type="CollisionShape2D" parent="Player/Body"]
+z_index = 1
+position = Vector2(-0.0257568, -38.8567)
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 rotation = -3.14159
 scale = Vector2(5.20754, -0.38429)
 shape = SubResource("RectangleShape2D_xtwhb")
 
 [node name="Sprite" type="Sprite2D" parent="Player/Body"]
+<<<<<<< HEAD
 modulate = Color(1.5, 1.5, 1.5, 1)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("3_0ounf")
@@ -467,6 +526,11 @@ z_index = -1
 position = Vector2(30.6063, 16.1619)
 scale = Vector2(0.2502, 0.2502)
 
+=======
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("3_0ounf")
+
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 [node name="AllEggs" type="Node2D" parent="."]
 
 [node name="Eggs" type="Node2D" parent="AllEggs"]
@@ -480,10 +544,54 @@ script = ExtResource("8_637ar")
 [node name="Timer" type="Timer" parent="AllEggs/Eggs/Generator"]
 autostart = true
 
+<<<<<<< HEAD
+=======
+[node name="Control" type="Control" parent="AllEggs/Eggs"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 971.0
+offset_top = 44.0
+offset_right = 1011.0
+offset_bottom = 84.0
+
+[node name="Points" type="Label" parent="AllEggs/Eggs/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Points: 0"
+
+[node name="Lives" type="Label" parent="AllEggs/Eggs/Control"]
+z_index = 1
+layout_mode = 0
+offset_top = 33.0
+offset_right = 40.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lives: 3"
+
+[node name="Status" type="Label" parent="AllEggs/Eggs/Control"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 116.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Status: Normal"
+
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 [node name="BrokenEggs" type="Node2D" parent="AllEggs"]
 
 [node name="BrokenEgg" parent="AllEggs/BrokenEggs" instance=ExtResource("9_5phjq")]
 position = Vector2(-63, 54)
+<<<<<<< HEAD
+=======
+=======
+[node name="BrokenEggs" type="Node2D" parent="AllEggs"]
+
+[node name="BrokenEgg" parent="AllEggs/BrokenEggs" instance=ExtResource("9_5phjq")]
+position = Vector2(441, 54)
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 
 [node name="Generator2" type="Marker2D" parent="AllEggs/BrokenEggs"]
 script = ExtResource("10_gcg5q")
@@ -501,18 +609,27 @@ position = Vector2(-65, 119)
 script = ExtResource("12_cvmck")
 
 [node name="Timer" type="Timer" parent="AllEggs/GoldenEggs/Generator3"]
+<<<<<<< HEAD
 wait_time = 10.0
+=======
+wait_time = 5.0
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 autostart = true
 
 [node name="SpeedEggs" type="Node2D" parent="AllEggs"]
 
 [node name="SpeedEgg" parent="AllEggs/SpeedEggs" instance=ExtResource("13_lccsy")]
+<<<<<<< HEAD
 position = Vector2(-64, 179)
+=======
+position = Vector2(-64, 200)
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 
 [node name="Generator4" type="Marker2D" parent="AllEggs/SpeedEggs"]
 script = ExtResource("14_ncnv8")
 
 [node name="Timer" type="Timer" parent="AllEggs/SpeedEggs/Generator4"]
+<<<<<<< HEAD
 wait_time = 11.0
 autostart = true
 
@@ -899,6 +1016,11 @@ horizontal_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_hbtp0")
 }
+=======
+wait_time = 7.0
+autostart = true
+
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
 
 [connection signal="body_entered" from="Backdrop/floorcollision" to="." method="_on_floorcollision_body_entered"]
 [connection signal="body_entered" from="Backdrop/floorcollision" to="AllEggs/Eggs/Generator" method="_on_floorcollision_body_entered"]
@@ -906,6 +1028,7 @@ libraries = {
 [connection signal="timeout" from="AllEggs/BrokenEggs/Generator2/Timer2" to="AllEggs/BrokenEggs/Generator2" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="AllEggs/GoldenEggs/Generator3/Timer" to="AllEggs/GoldenEggs/Generator3" method="_on_timer_timeout"]
 [connection signal="timeout" from="AllEggs/SpeedEggs/Generator4/Timer" to="AllEggs/SpeedEggs/Generator4" method="_on_timer_timeout"]
+<<<<<<< HEAD
 [connection signal="timeout" from="AllEggs/SlowEggs/Generator5/Timer" to="AllEggs/SlowEggs/Generator5" method="_on_timer_timeout"]
 [connection signal="timeout" from="AllEggs/InverterEggs/Generator6/Timer" to="AllEggs/InverterEggs/Generator6" method="_on_timer_timeout"]
 [connection signal="timeout" from="AllEggs/GiantEggs/Generator7/Timer" to="AllEggs/GiantEggs/Generator7" method="_on_timer_timeout"]
@@ -913,3 +1036,6 @@ libraries = {
 [connection signal="timeout" from="AllEggs/TinyEggs/Generator9New/Timer" to="AllEggs/TinyEggs/Generator9New" method="_on_timer_timeout"]
 [connection signal="timeout" from="FallspeedTimer" to="." method="_on_fallspeed_timer_timeout"]
 [connection signal="timeout" from="ReturnMMTimer" to="." method="_on_return_mm_timer_timeout"]
+=======
+
+>>>>>>> 2402988a50ffe5d33610450771ca5acf489479db
